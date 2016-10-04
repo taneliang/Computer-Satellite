@@ -104,7 +104,7 @@
 - (void)openEarsController:(OpenEarsController *)controller didRecognizeText:(NSString *)text {
 	__block AVAudioPlayer *player = self.acknowledgedTwoSoundPlayer;
 	
-	static NSString *IPAddress = @"10.0.1.9";
+	static NSString *IPAddress = @"10.0.1.3";
 	
 	NSString *speechString = nil;
 	self.timeLabel.text = [[NSDate date] description];
@@ -150,11 +150,12 @@
 	queryDictionary[@"q"] = text;
 	if ([text isEqualToString:@"UPDATE LIST OF PROGRAMS"]) queryDictionary[@"cmd"] = @"get_program_list", [queryDictionary removeObjectForKey:@"q"];
 	NSData *JSONQueryData = [[[[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:queryDictionary options:0 error:nil] encoding:NSUTF8StringEncoding] stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""] dataUsingEncoding:NSUTF8StringEncoding];
-	NSURL *queryURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ccmd.php", IPAddress]];
+	NSURL *queryURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@:2434", IPAddress]];
 	
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:queryURL];
 	[request setHTTPMethod:@"POST"];
-	[request setHTTPBody:JSONQueryData];
+    [request setValue:@"text/plain" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:JSONQueryData];
 	
 	[NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 		NSString *speechString = nil;
