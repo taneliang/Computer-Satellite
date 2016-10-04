@@ -6,7 +6,7 @@ An iOS app to control a Mac running Computer Command. Although it's just an expe
 
 ## Background
 
-Computer Satellite was written back in 2012 as a primitive voice-controlled system. Once paired with Computer Command, it still works, albeit a little slowly. But you get that beautiful Star Trek computer beeps and that makes me very happy.
+Computer Satellite was written back in 2012 as a primitive voice-controlled system. Once paired with Computer Command, it still works, albeit a little slowly. Plus, it uses those beautiful Star Trek LCARS computer beeps and that makes me very happy.
 
 Most of the code from back then has been preserved, but a few changes were made in 2016 to allow Xcode 8 to build it for iOS 10.
 
@@ -22,7 +22,7 @@ Set up Computer Command. Without setting up Computer Command, the only commands 
 
 1. Pocketsphinx (through OpenEars) listens to voice commands.
 2. Once the activation keyword "Computer" is heard, the app is "activated" until 5 seconds after the last utterance.
-3. When some text is recognized, Satellite checks if it's "WHAT IS THE TIME" or "WHAT IS THE DATE". If it is, it responds immediately using the NSDate APIs. If not, it attempts to contact Computer Command and relays the recognized text to it.
+3. When some text is recognized, Satellite checks if it's "WHAT IS THE TIME" or "WHAT IS THE DATE". If it is, it responds immediately using the NSDate APIs. If not, it attempts to send a HTTP POST request to Computer Command with the recognized text.
 4. Computer Command tells Computer Satellite what beeps to use and what to say.
 
 Essentially, Computer Satellite transcribes voice and tells Computer Command about it. At this point, I hadn't managed to figure out an easy way to do text-to-speech on OS X; OpenEars was only available on iOS.
