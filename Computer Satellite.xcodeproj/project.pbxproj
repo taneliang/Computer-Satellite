@@ -16,7 +16,6 @@
 		990F238F15DEACA10012F8BD /* sendump in Resources */ = {isa = PBXBuildFile; fileRef = 990F238715DEACA10012F8BD /* sendump */; };
 		990F239015DEACA10012F8BD /* transition_matrices in Resources */ = {isa = PBXBuildFile; fileRef = 990F238815DEACA10012F8BD /* transition_matrices */; };
 		990F239115DEACA10012F8BD /* variances in Resources */ = {isa = PBXBuildFile; fileRef = 990F238915DEACA10012F8BD /* variances */; };
-		990F239415DEB4D50012F8BD /* VoiceServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 990F239315DEB4D50012F8BD /* VoiceServices.framework */; };
 		990F239E15DEB7A70012F8BD /* OpenEarsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990F239D15DEB7A70012F8BD /* OpenEarsController.m */; };
 		990F23A015DF598D0012F8BD /* Vocabulary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 990F239F15DF598D0012F8BD /* Vocabulary.plist */; };
 		990F23A515E2A5260012F8BD /* acknowledged_2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 990F23A115E2A0A80012F8BD /* acknowledged_2.caf */; };
@@ -48,7 +47,6 @@
 		990F238815DEACA10012F8BD /* transition_matrices */ = {isa = PBXFileReference; lastKnownFileType = file; path = transition_matrices; sourceTree = "<group>"; };
 		990F238915DEACA10012F8BD /* variances */ = {isa = PBXFileReference; lastKnownFileType = file; path = variances; sourceTree = "<group>"; };
 		990F239215DEAFCF0012F8BD /* VSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSSpeechSynthesizer.h; sourceTree = "<group>"; };
-		990F239315DEB4D50012F8BD /* VoiceServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VoiceServices.framework; path = System/Library/PrivateFrameworks/VoiceServices.framework; sourceTree = SDKROOT; };
 		990F239C15DEB7A70012F8BD /* OpenEarsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEarsController.h; sourceTree = "<group>"; };
 		990F239D15DEB7A70012F8BD /* OpenEarsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenEarsController.m; sourceTree = "<group>"; };
 		990F239F15DF598D0012F8BD /* Vocabulary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Vocabulary.plist; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				990F239415DEB4D50012F8BD /* VoiceServices.framework in Frameworks */,
 				9952241215DEA7F100AAED99 /* AudioToolbox.framework in Frameworks */,
 				9952241315DEA7F100AAED99 /* AVFoundation.framework in Frameworks */,
 				995223F115DEA7B100AAED99 /* UIKit.framework in Frameworks */,
@@ -127,7 +124,6 @@
 		995223EF15DEA7B100AAED99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				990F239315DEB4D50012F8BD /* VoiceServices.framework */,
 				9952241015DEA7F100AAED99 /* AudioToolbox.framework */,
 				9952241115DEA7F100AAED99 /* AVFoundation.framework */,
 				990F237E15DEA9590012F8BD /* OpenEars.framework */,
@@ -202,6 +198,11 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "E-Liang Tan";
+				TargetAttributes = {
+					995223EB15DEA7B100AAED99 = {
+						DevelopmentTeam = H6A2TRW47J;
+					};
+				};
 			};
 			buildConfigurationList = 995223E615DEA7B100AAED99 /* Build configuration list for PBXProject "Computer Satellite" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -293,12 +294,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -320,12 +323,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -341,6 +346,7 @@
 		9952240E15DEA7B200AAED99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = H6A2TRW47J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Frameworks\"",
 					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
@@ -348,7 +354,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Computer Satellite/Computer Satellite-Prefix.pch";
 				INFOPLIST_FILE = "Computer Satellite/Computer Satellite-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -357,6 +363,7 @@
 		9952240F15DEA7B200AAED99 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = H6A2TRW47J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Frameworks\"",
 					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"",
@@ -364,7 +371,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Computer Satellite/Computer Satellite-Prefix.pch";
 				INFOPLIST_FILE = "Computer Satellite/Computer Satellite-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
