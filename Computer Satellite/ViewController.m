@@ -40,7 +40,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
-	self.speechSynthesizer = [[VSSpeechSynthesizer alloc] init];
+	self.speechSynthesizer = [[AVSpeechSynthesizer alloc] init];
 	[self.speechSynthesizer setDelegate:self];
 	
 	NSError *error = nil;
@@ -71,14 +71,14 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)speechSynthesizerDidStartSpeaking:(id)speechSynthesizer {
+- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didStartSpeechUtterance:(AVSpeechUtterance *)utterance {
 	NSLog(@"Did start speaking");
 	[self.openEarsController suspendListening];
 	[self.openEarsController invalidateTimeoutTimer];
 }
 
--(void)speechSynthesizer:(id)synthesizer didFinishSpeaking:(BOOL)speaking withError:(id)error {
-	NSLog(@"Did finish speaking %@ %d %@", synthesizer, speaking, error);
+- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
+	NSLog(@"Did finish speaking %@", synthesizer);
 	[self.openEarsController resumeListening];
 	[self.openEarsController reinitializeTimeoutTimer];
 }
@@ -127,7 +127,7 @@
 		self.statusLabel.text = @"Success";
 		NSTimeInterval delay = 0;
 		if (player.playing) delay = player.duration - player.currentTime;
-		[self.speechSynthesizer performSelector:@selector(startSpeakingString:) withObject:speechString afterDelay:delay];
+        [self.speechSynthesizer speakUtterance:[AVSpeechUtterance speechUtteranceWithString:speechString]];
 		self.messageLabel.text = speechString;
 		return;
 	}
@@ -140,7 +140,7 @@
 		self.statusLabel.text = @"Success";
 		NSTimeInterval delay = 0;
 		if (player.playing) delay = player.duration - player.currentTime;
-		[self.speechSynthesizer performSelector:@selector(startSpeakingString:) withObject:speechString afterDelay:delay];
+        [self.speechSynthesizer speakUtterance:[AVSpeechUtterance speechUtteranceWithString:speechString]];
 		self.messageLabel.text = speechString;
 		return;
 	}
@@ -194,7 +194,7 @@
 		if (speechString) {
 			NSTimeInterval delay = 0;
 			if (player.playing) delay = player.duration - player.currentTime;
-			[self.speechSynthesizer performSelector:@selector(startSpeakingString:) withObject:speechString afterDelay:delay];
+            [self.speechSynthesizer speakUtterance:[AVSpeechUtterance speechUtteranceWithString:speechString]];
 			self.messageLabel.text = speechString;
 		}
 		

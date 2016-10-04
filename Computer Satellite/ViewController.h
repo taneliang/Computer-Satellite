@@ -9,13 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
-#import "VSSpeechSynthesizer.h"
 #import "OpenEarsController.h"
 #import <OpenEars/FliteController.h>
 
-@interface ViewController : UIViewController <AVAudioPlayerDelegate, VSSpeechSynthesizerDelegate, OpenEarsControllerDelegate>
+@interface ViewController : UIViewController <AVAudioPlayerDelegate, AVSpeechSynthesizerDelegate, OpenEarsControllerDelegate>
 
-@property (nonatomic, strong) VSSpeechSynthesizer *speechSynthesizer;
+@property (nonatomic, strong) AVSpeechSynthesizer *speechSynthesizer;
 @property (nonatomic, strong) OpenEarsController *openEarsController;
 @property (nonatomic, strong) FliteController *flite;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;

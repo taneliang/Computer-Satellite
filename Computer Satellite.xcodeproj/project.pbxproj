@@ -46,7 +46,6 @@
 		990F238715DEACA10012F8BD /* sendump */ = {isa = PBXFileReference; lastKnownFileType = file; path = sendump; sourceTree = "<group>"; };
 		990F238815DEACA10012F8BD /* transition_matrices */ = {isa = PBXFileReference; lastKnownFileType = file; path = transition_matrices; sourceTree = "<group>"; };
 		990F238915DEACA10012F8BD /* variances */ = {isa = PBXFileReference; lastKnownFileType = file; path = variances; sourceTree = "<group>"; };
-		990F239215DEAFCF0012F8BD /* VSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSSpeechSynthesizer.h; sourceTree = "<group>"; };
 		990F239C15DEB7A70012F8BD /* OpenEarsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEarsController.h; sourceTree = "<group>"; };
 		990F239D15DEB7A70012F8BD /* OpenEarsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenEarsController.m; sourceTree = "<group>"; };
 		990F239F15DF598D0012F8BD /* Vocabulary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Vocabulary.plist; sourceTree = "<group>"; };
@@ -146,7 +145,6 @@
 				990F239C15DEB7A70012F8BD /* OpenEarsController.h */,
 				990F239D15DEB7A70012F8BD /* OpenEarsController.m */,
 				995223F715DEA7B100AAED99 /* Supporting Files */,
-				990F239215DEAFCF0012F8BD /* VSSpeechSynthesizer.h */,
 			);
 			path = "Computer Satellite";
 			sourceTree = "<group>";
