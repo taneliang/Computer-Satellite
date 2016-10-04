@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>HELLO</string>
+	<string>HEY</string>
+	<string>HI</string>
+	<string>GREETINGS</string>
+	<string>SALUTATIONS</string>
+	<string>GOOD MORNING</string>
+	<string>GOOD AFTERNOON</string>
+	<string>GOOD EVENING</string>
+	<string>GOOD NIGHT</string>
+	<string>GOOD DAY</string>
+	<string>WHO</string>
+	<string>WHAT</string>
+	<string>WHEN</string>
+	<string>WHERE</string>
+	<string>WHY</string>
+	<string>HOW</string>
+	<string>BE</string>
+	<string>IS</string>
+	<string>ARE</string>
+	<string>WAS</string>
+	<string>WERE</string>
+	<string>BEEN</string>
+	<string>BEING</string>
+	<string>THE</string>
+	<string>A</string>
+	<string>DATE</string>
+	<string>TIME</string>
+	<string>COMPUTER</string>
+	<string>INCREASE</string>
+	<string>DECREASE</string>
+	<string>TURN UP</string>
+	<string>TURN DOWN</string>
+	<string>VOLUME</string>
+	<string>ONE</string>
+	<string>TWO</string>
+	<string>THREE</string>
+	<string>FOUR</string>
+	<string>FIVE</string>
+	<string>LEVEL</string>
+	<string>LEVELS</string>
+	<string>MUTE</string>
+	<string>UNMUTE</string>
+	<string>AUDIO</string>
+	<string>EXECUTE</string>
+	<string>RUN</string>
+	<string>OPEN</string>
+	<string>PROGRAM</string>
+	<string>SAFARI</string>
+	<string>UPDATE</string>
+	<string>LIST</string>
+	<string>OF</string>
+	<string>PROGRAMS</string>
+</array>
+</plist>

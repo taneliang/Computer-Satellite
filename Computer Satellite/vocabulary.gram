@@ -1,0 +1,19 @@
+#JSGF V1.0;
+grammar computerSatelliteVocabulary;
+
+public <CMD> = [<activationPhrase>] [<question>] [<volumeCommand>] [<executeProgram>] [<programListUpdate>];
+
+<greetings> = HELLO | HEY | HI | GREETINGS | SALUTATIONS | GOOD MORNING | GOOD AFTERNOON | GOOD EVENING | GOOD NIGHT | GOOD DAY;
+<questionWord> = WHO | WHAT | WHEN | WHERE | WHY | HOW;
+<be> = BE | IS | ARE | WAS | WERE | BEEN | BEING;
+<determiner> = THE | A;
+<object> = DATE | TIME;
+<activationPhrase> = COMPUTER;
+
+<question> = <questionWord> <be> <determiner> <object>;
+<volumeCommand> = [( INCREASE | DECREASE | TURN UP | TURN DOWN ) VOLUME [(ONE LEVEL) | ((TWO | THREE | FOUR | FIVE) LEVELS)]] | [(MUTE | UNMUTE) AUDIO];
+
+<programName> = SAFARI;
+<executeProgram> = (EXECUTE | RUN | OPEN) [PROGRAM] <programName>;
+
+<programListUpdate> = UPDATE LIST OF PROGRAMS;
